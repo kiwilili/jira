@@ -1,5 +1,4 @@
 import { useArray, useMount } from "utils";
-import React, { useState } from "react";
 
 export const TsReactTest = () => {
   const persons: { name: string; age: number }[] = [
@@ -10,13 +9,13 @@ export const TsReactTest = () => {
 
   useMount(() => {
     // 期待这里报错：Property 'notExist' does not exist on type '{ name: string; age: number; }[]'.
-    console.log(value.notExist);
+    console.log(value);
 
     // 期待这里报错：Property 'age' is missing in type '{ name: string; }' but required in type '{ name: string; age: number; }'.
-    add({ name: "david" });
+    add({ name: "david", age: 11 });
 
     // 期待这里报错：Argument of type 'string' is not assignable to parameter of type 'number'.
-    removeIndex("123");
+    removeIndex(1);
   });
   return (
     <div>
