@@ -14,7 +14,7 @@ export const cleanObject = (object: object) => {
   return result;
 };
 
-// hook 只能在组件中、或者hook中调用
+// hook 只能在组件中、或者hook中调用, 不能在函数中使用
 export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
